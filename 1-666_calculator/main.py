@@ -1,3 +1,11 @@
+#「大學國文：科技人文選讀-科學與文化」中一次國文報告使用，報告的書中提到"布萊文"，一個極端的基督徒，指控當時美國前總統"雷根"是敵基督、惡魔
+#他的說他的證據是以他定義的字母規則(A = 1 x 6, B = 2 x 6... Z = 26 x 6)
+#雷根的名字"Ronald Reagan"會等於660
+#前面再加"A"的話是666，野獸的數字 ¯\_(ツ)_/¯
+#這個計算機讓你方便運算並找出666的字串
+#n 為倍率，d為差
+#右上角pin使視窗永遠在上 (Tkinter 不支持gif，所以我讓他顯示的方式很慢需要載入幾秒)
+
 import tkinter as tk
 from PIL import Image,ImageTk
 from gif import ImageLabel
@@ -17,7 +25,7 @@ state = False
 dog.resizable(width=False, height=False)
 dog.title("666 計算機，你也是惡魔嗎?")
 dog.geometry("500x650")
-dog.iconbitmap("icon.ico")
+dog.iconbitmap(r"1-666_calculator\icon.ico")
 
 
 
@@ -58,7 +66,7 @@ def exe ():
     if (total == 666):  #fire
         Devil = True
         fire.place(relx=0.5,rely=0.83, anchor=tk.CENTER)
-        fire.load('fire.gif')
+        fire.load(r'1-666_calculator\fire.gif')
 
     #output
     temp = tk.Label(dog, text="                          ", bg="black")
@@ -71,12 +79,12 @@ butt.place(x=360,y=135)
 
 
 #ink 
-imagey = Image.open("ink.png")
+imagey = Image.open(r"1-666_calculator\ink.png")
 imagey = imagey.resize((270,70))
 imagey2 = ImageTk.PhotoImage(imagey)
 
 
-imagey3 = Image.open("arrow.png")
+imagey3 = Image.open(r"1-666_calculator\arrow.png")
 imagey3 = imagey3.resize((40,40))
 imagey4 = ImageTk.PhotoImage(imagey3)
 
